@@ -3,13 +3,17 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "extensions": [
-    "johnknot.vscode-racket",
-    "aaron-bond.better-comments"
-  ],
-  "settings": {
-    "racket.executablePath": "/usr/bin/racket",
-    "files.associations": { "*.rkt": "racket" }
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "johnknot.vscode-racket",
+        "aaron-bond.better-comments"
+      ],
+      "settings": {
+        "racket.executablePath": "/usr/bin/racket",
+        "files.associations": { "*.rkt": "racket" }
+      }
+    }
   },
   "postCreateCommand": "echo 'Welcome to Racket!'"
 }
