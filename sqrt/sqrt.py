@@ -3,13 +3,13 @@ def sqrt(x: float) -> float:
     def is_good_enough(guess: float) -> bool:
         return abs(guess * guess - x) < 0.001
 
-    def average(a, b):
+    def average(a: float, b: float) -> float:
         return (a + b) / 2
 
-    def improve(guess):
+    def improve(guess: float) -> float:
         return average(guess, x / guess)
 
-    def sqrt_iter(guess):
+    def sqrt_iter(guess: float) -> float:
         if is_good_enough(guess):
             return guess
         else:
