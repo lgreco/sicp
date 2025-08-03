@@ -22,17 +22,30 @@ def cc(amount, kinds_of_coins):
     """_summary_
 
     Args:
-        amount (_type_): _description_
-        kinds_of_coins (_type_): _description_
+        amount (int): amount to break into change of various coins denominations, 
+        expressed in pennies; for example $1 = 100 cents.
+
+        kinds_of_coins (int): number of denominations available for change. 
+        Initially there are 5 kinds of coints (half dollars, quarters, dimes, 
+        nickels, and pennies).
 
     Returns:
-        _type_: _description_
+        int: number of ways to change the given amount using standard US coins.
     """
     if amount == 0:
+        # Base case: with the given kinds of coins, we have reached a zero
+        # amount remaining to be changed; so we have just found one way to
+        # change the given amount with the available coins.
         ways = 1
     elif amount < 0 or kinds_of_coins == 0:
+        # Base case too: if we are out of amount to process or out of 
+        # coin denominations, this is not a way to make change.
         ways = 0
     else:
+        # Recurse to the sum of ways to change the given amount with one
+        # less denomination available, plus all the ways to make change
+        # for the given amount minus the denomination of the first kind
+        # of coins.
         ways = cc(amount, kinds_of_coins - 1) + cc(
             amount - first_denomination(kinds_of_coins), kinds_of_coins
         )
@@ -41,17 +54,20 @@ def cc(amount, kinds_of_coins):
 
 
 def count_change(amount):
-    """_summary_
+    """Computes the number of ways to change an amount in USD with any
+    combination of pennies, nickels, dimes, quarters, and half dollar coins.
 
     Args:
-        amount (_type_): _description_
+        amount (int): the amount, in USD to change
 
     Returns:
-        _type_: _description_
+        int: how many different was the given amount can be made to chage
+        using $0.50, $0.25, $0.10, $0.05, and $0.01 coins.
     """
-    return cc(amount, 5)
+    # Convert USD into pennies because function cc uses pennies
+    return cc(100 * amount, 5)
     # end method count_change
 
 
 if __name__ == "__main__":
-    print(count_change(100))
+    print(count_change(9))
