@@ -19,7 +19,7 @@ class SQRT:
         else:
             return self._sqrt_iter(self._improve(guess))
 
-    def sqrt(self, x):
+    def sqrt(self, x: float) -> float:
         self._x = x
         return self._sqrt_iter(1.0)
 
