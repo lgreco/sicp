@@ -62,7 +62,7 @@ def count_change(amount):
         amount (int): the amount, in USD to change
 
     Returns:
-        int: how many different was the given amount can be made to chage
+        int: how many different ways the given amount can be made to chage
         using $0.50, $0.25, $0.10, $0.05, and $0.01 coins.
     """
     # Convert USD into pennies because function cc uses pennies
