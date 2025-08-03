@@ -19,7 +19,8 @@ def first_denomination(kinds_of_coins):
 
 
 def cc(amount, kinds_of_coins):
-    """_summary_
+    """Computes the number of ways to make change for the given amount and 
+    the given coin denominations.
 
     Args:
         amount (int): amount to break into change of various coins denominations, 
