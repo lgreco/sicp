@@ -57,3 +57,9 @@ for h in range(0,3):
     for d in range(0, (100-50*h-25*q)//10+1):
     # etc
 ```
+Prunig the brute force loops reduces the number of steps from 160,000 to 7,747. Using dynamic programming can reduce the number of steps further, to 414. This number of steps, in dynamic programming, can be broken down to:
+* For coin = 1: amount goes from 1 to 100 → 100 iterations
+* For coin = 5: amount goes from 5 to 100 → 96 iterations
+* For coin = 10: amount from 10 to 100 → 91 iterations
+* For coin = 25: amount from 25 to 100 → 76 iterations
+* For coin = 50: amount from 50 to 100 → 51 iterations
