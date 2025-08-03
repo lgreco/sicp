@@ -55,7 +55,7 @@ Similarly, we can write the number of dimes available, as a function of how many
 for h in range(0,3):
   for q in range(0, (100-50*h)//25+1):
     for d in range(0, (100-50*h-25*q)//10+1):
-    # etc
+      # etc
 ```
 Prunig the brute force loops reduces the number of steps from 160,000 to 7,747. Using dynamic programming can reduce the number of steps further, to 414. This number of steps, in dynamic programming, can be broken down to:
 * For coin = 1: amount goes from 1 to 100 → 100 iterations
