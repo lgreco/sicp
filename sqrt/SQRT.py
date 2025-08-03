@@ -26,4 +26,4 @@ class SQRT:
 if __name__ == "__main__":
     demo = SQRT()
     for num in [4, 2, 10, 1234]:
-        print(f"√{num} ≈ {demo.sqrt(num)}")
+        print(f"√{num:-4d} ≈ {demo.sqrt(num):7.4f}")
