@@ -10,13 +10,9 @@ Lets assume the following quantites of coins:
 
 $$
 \text{half dollar coins}:\  0 \leq h \leq 2\\
-
 \text{quarters}:\ 0 \leq q \leq 4  \\
-
 \text{dime}:\ 0 \leq d \leq 10  \\
-
 \text{nickels}:\  0 \leq n \leq 20 \\
-
 \text{pennies}:\  0 \leq p \leq 100 \\
 $$
 
