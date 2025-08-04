@@ -133,32 +133,24 @@ def brute_force_pruned():
     return ways_count, steps
     # end method brute_force_pruned
 
+
 def coins_dynamic_programming():
     # List of available coin denominations in cents
     coins = [1, 5, 10, 25, 50]
-
     # Target amount in cents (e.g., $1.00 = 100 cents)
     target = 100
     steps = 0
-
     # Initialize a list to store the number of ways to make change for each amount
     # ways[i] will store the number of ways to make change for i cents
     ways = [0] * (target + 1)
-
     # There is one way to make 0 cents: using no coins
     ways[0] = 1
-
     # For each coin, update the ways array for all amounts >= coin value
     for coin in coins:
         for amount in range(coin, target + 1):
             ways[amount] += ways[amount - coin]
             steps += 1
-
     return ways[target], steps
-
-    # Output the result for 100 cents
-    print(f"Number of ways to make change for $1.00: {ways[target]}")
-
 
 
 if __name__ == "__main__":
@@ -167,8 +159,11 @@ if __name__ == "__main__":
         f"\n\n   Full brute foces shows {ways} ways to change $1, after {steps:,d} steps."
     )
     ways, steps = brute_force_pruned()
-    print(f" Pruned brute foces shows {ways} ways to change $1, after {steps:,d} steps.")
+    print(
+        f" Pruned brute foces shows {ways} ways to change $1, after {steps:,d} steps."
+    )
     print(f"           Recusion shows {count_change(1)} ways to change $1.")
     ways, steps = coins_dynamic_programming()
-    print(f"Dynanic programming shows {ways} ways to change $1, after {steps:,d} steps.\n")
-
+    print(
+        f"Dynanic programming shows {ways} ways to change $1, after {steps:,d} steps.\n"
+    )
