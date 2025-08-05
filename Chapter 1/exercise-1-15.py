@@ -28,8 +28,10 @@ def sine(angle: float) -> float:
     that the method is in \Theta(x).
     """
     if abs(angle) > 0.1:
+        # divide angle by 3 to use trig identity and recurse
         return p(sine(angle / 3))
     else:
+        # base case
         return angle
     # end method sine
 
